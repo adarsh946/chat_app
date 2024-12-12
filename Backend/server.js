@@ -12,9 +12,9 @@ const app = express();
 app.use(express.json());
 app.use(cookieParser());
 
-app.use("/api/v1", authRoutes);
-app.use("/api/v2", messageRoutes);
-app.use("/api/v3", userRoutes);
+app.use("/api/auth", authRoutes);
+app.use("/api/messeges", messageRoutes);
+app.use("/api/user", userRoutes);
 
 const PORT = process.env.PORT || 5000;
 

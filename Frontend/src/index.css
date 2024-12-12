@@ -10,3 +10,21 @@ body {
   background-position: calc(20% + 0px) calc(70% - 30px);
   background-attachment: fixed;
 }
+
+/* dark mode looking scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #555;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #121212;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #242424;
+}

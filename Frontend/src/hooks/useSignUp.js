@@ -28,7 +28,7 @@ export const useSignUp = () => {
     try {
       const res = await fetch("/api/auth/signup", {
         method: "POST",
-        headers: { "content-type": "aplication/json" },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           fullname,
           username,
@@ -38,7 +38,7 @@ export const useSignUp = () => {
         }),
       });
 
-      const data = res.json();
+      const data = await res.json();
       console.log(data);
 
       if (data.error) {

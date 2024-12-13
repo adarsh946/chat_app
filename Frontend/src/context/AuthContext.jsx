@@ -6,13 +6,13 @@ export const useAuthContext = () => {
   return useContext(Authcontext);
 };
 
-export const AuthcontextProvider = ({ Children }) => {
+export const AuthcontextProvider = ({ children }) => {
   const [authUser, setAuthUser] = useState(
     JSON.parse(localStorage.getItem("chat-user")) || null
   );
   return (
     <Authcontext.Provider value={{ authUser, setAuthUser }}>
-      {Children}
+      {children}
     </Authcontext.Provider>
   );
 };

@@ -31,7 +31,7 @@ const LogIn = () => {
               placeholder="Enter username"
               className="w-full input input-bordered h-10"
               value={username}
-              onChange={(e) => e.target.value}
+              onChange={(e) => setUsername(e.target.value)}
             />
           </div>
 
@@ -44,7 +44,7 @@ const LogIn = () => {
               placeholder="Enter Password"
               className="w-full input input-bordered h-10"
               value={password}
-              onChange={(e) => e.target.value}
+              onChange={(e) => setPassword(e.target.value)}
             />
           </div>
           <Link
@@ -55,7 +55,13 @@ const LogIn = () => {
           </Link>
 
           <div>
-            <button className="btn btn-block btn-sm mt-2">Login</button>
+            <button className="btn btn-block btn-sm mt-2">
+              {loading ? (
+                <span className="loading loading-spinner"></span>
+              ) : (
+                "Login"
+              )}
+            </button>
           </div>
         </form>
       </div>

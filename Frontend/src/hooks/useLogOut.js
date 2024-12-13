@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useAuthContext } from "../context/AuthContext";
 import toast from "react-hot-toast";
-import { json } from "react-router-dom";
 
 export const useLogOut = () => {
   const [loading, setLoading] = useState(false);
@@ -12,11 +11,11 @@ export const useLogOut = () => {
     try {
       const res = await fetch("/api/auth/logout", {
         method: "POST",
-        headers: { "content-type": aplication / json },
+        headers: { "Content-Type": "application/json" },
       });
 
       const data = res.json();
-      if (!data) {
+      if (data.error) {
         throw new Error(data.error);
       }
 

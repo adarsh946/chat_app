@@ -6,11 +6,14 @@ export const useLogIn = () => {
   const { setAuthUser } = useAuthContext();
 
   const logIn = async (username, password) => {
+    const success = handleLoginError(username, password);
+    if (!success) return;
+
     setLoading(true);
     try {
       const res = await fetch("/api/auth/login", {
         method: "POST",
-        headers: { "content-type": "aplication/json" },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username, password }),
       });
 
@@ -26,4 +29,10 @@ export const useLogIn = () => {
     }
   };
   return { loading, logIn };
+};
+
+const handleLoginError = (username, password) => {
+  if (!username || !password) {
+    return false;
+  }
 };

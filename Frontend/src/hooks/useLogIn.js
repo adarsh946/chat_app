@@ -17,7 +17,7 @@ export const useLogIn = () => {
         body: JSON.stringify({ username, password }),
       });
 
-      const data = res.json();
+      const data = await res.json();
       if (data.error) {
         throw new Error(data.error);
       }

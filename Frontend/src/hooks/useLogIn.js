@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useAuthContext } from "../context/AuthContext";
+import toast from "react-hot-toast";
 
 export const useLogIn = () => {
   const [loading, setLoading] = useState(false);
@@ -22,10 +23,12 @@ export const useLogIn = () => {
         throw new Error(data.error);
       }
 
-      localStorage.getItem("chat-user", JSON.stringify(data));
+      localStorage.setItem("chat-user", JSON.stringify(data));
       setAuthUser(data);
     } catch (error) {
       toast.error(error.messege);
+    } finally {
+      setLoading(false);
     }
   };
   return { loading, logIn };
@@ -33,6 +36,8 @@ export const useLogIn = () => {
 
 const handleLoginError = (username, password) => {
   if (!username || !password) {
+    toast.error("Please fill all the fields!");
     return false;
   }
+  return true;
 };

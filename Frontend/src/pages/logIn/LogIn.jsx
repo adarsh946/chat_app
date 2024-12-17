@@ -21,7 +21,7 @@ const LogIn = () => {
           <span className="text-blue-500"> ChatApp</span>
         </h1>
 
-        <form onClick={handleSubmit}>
+        <form onSubmit={handleSubmit}>
           <div>
             <label className="label p-2">
               <span className="text-base label-text">Username</span>

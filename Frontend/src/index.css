@@ -3,13 +3,18 @@
 @tailwind utilities;
 
 body {
+  background: linear-gradient(135deg, #2a2a72, #009ffd);
+  color: #ffffff;
+}
+
+/* body {
   background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
     url("/bg.png.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: calc(20% + 0px) calc(70% - 30px);
   background-attachment: fixed;
-}
+} */
 
 /* dark mode looking scrollbar */
 ::-webkit-scrollbar {

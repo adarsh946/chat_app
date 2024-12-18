@@ -12,6 +12,8 @@ import { app, server } from "./socket/socket.js";
 dotenv.config();
 
 const __dirname = path.resolve();
+const cors = require("cors");
+app.use(cors({ origin: "http://localhost:8000" }));
 
 app.use(express.json());
 app.use(cookieParser());

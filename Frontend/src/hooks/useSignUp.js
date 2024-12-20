@@ -26,20 +26,17 @@ export const useSignUp = () => {
 
     setLoading(true);
     try {
-      const res = await fetch(
-        "https://chatbuddy-vayg.onrender.com/api/auth/signup",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            fullname,
-            username,
-            password,
-            confirmPassword,
-            gender,
-          }),
-        }
-      );
+      const res = await fetch("/api/auth/signup", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          fullname,
+          username,
+          password,
+          confirmPassword,
+          gender,
+        }),
+      });
 
       const data = await res.json();
       console.log(data);

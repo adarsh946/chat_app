@@ -10,7 +10,7 @@ const useSendMessages = () => {
     setLoading(true);
     try {
       const res = await fetch(
-        `https://chatbuddy-vayg.onrender.com/api/messages/send/${selectedConversations._id}`,
+        `/api/messages/send/${selectedConversations._id}`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

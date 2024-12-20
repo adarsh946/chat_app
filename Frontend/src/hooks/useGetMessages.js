@@ -10,9 +10,7 @@ const useGetMessages = () => {
     const getMessages = async () => {
       setLoading(true);
       try {
-        const res = await fetch(
-          `https://chatbuddy-vayg.onrender.com/api/messages/${selectedConversations._id}`
-        );
+        const res = await fetch(`/api/messages/${selectedConversations._id}`);
         const data = await res.json();
         if (data.error) throw new Error(data.error);
         setMessages(data);

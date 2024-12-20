@@ -8,13 +8,13 @@ import authRoutes from "./routes/auth.routes.js";
 import messageRoutes from "./routes/message.routes.js";
 import userRoutes from "./routes/user.routes.js";
 import { app, server } from "./socket/socket.js";
-import cors from "cors";
+// import cors from "cors";
 
 dotenv.config();
 
 const __dirname = path.resolve();
 
-app.use(cors({ origin: "http://localhost:8000" }));
+// app.use(cors({ origin: "http://localhost:8000" }));
 
 app.use(express.json());
 app.use(cookieParser());
